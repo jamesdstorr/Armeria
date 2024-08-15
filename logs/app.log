@@ -1,0 +1,234 @@
+2024-08-15 08:42:49 - Starting ArmeriaApplication using Java 17.0.11 with PID 87149 (/Users/jamesstorr/Projects/Java/Spring/armeria/target/classes started by jamesstorr in /Users/jamesstorr/Projects/Java/Spring/armeria)
+2024-08-15 08:42:49 - No active profile set, falling back to 1 default profile: "default"
+2024-08-15 08:42:50 - Bean 'com.linecorp.armeria.spring.ArmeriaBeanPostProcessorConfiguration' of type [com.linecorp.armeria.spring.ArmeriaBeanPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [armeriaBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-15 08:42:50 - Tomcat initialized with port 8080 (http)
+2024-08-15 08:42:50 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:42:50 - Starting service [Tomcat]
+2024-08-15 08:42:50 - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-15 08:42:50 - Initializing Spring embedded WebApplicationContext
+2024-08-15 08:42:50 - Root WebApplicationContext: initialization completed in 715 ms
+2024-08-15 08:42:50 - verboseExceptions: rate-limit=10 (default)
+2024-08-15 08:42:50 - useEpoll: false (default)
+2024-08-15 08:42:51 - annotatedServiceExceptionVerbosity: unhandled (default)
+2024-08-15 08:42:51 - Using Tls engine: OpenSSL BoringSSL, 0x1010107f
+2024-08-15 08:42:51 - hostname: btm-qnf7qx3k7t (from 'hostname' command)
+2024-08-15 08:42:51 - Exposing 1 endpoint beneath base path '/actuator'
+2024-08-15 08:42:51 - Starting ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:42:51 - Tomcat started on port 8080 (http) with context path '/'
+2024-08-15 08:42:58 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:42:58 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'armeriaServerGracefulShutdownLifecycle'
+2024-08-15 08:42:58 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-15 08:42:58 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'armeriaServerGracefulShutdownLifecycle'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:469)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:257)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:990)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.jamesstorr.armeria.ArmeriaApplication.main(ArmeriaApplication.java:10)
+Caused by: java.util.concurrent.CompletionException: java.lang.IllegalStateException: Armeria server failed to start
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:936)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.doCompleteExceptionally(UnmodifiableFuture.java:179)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.lambda$wrap$0(UnmodifiableFuture.java:113)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2147)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.doComplete(UnmodifiableFuture.java:164)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.lambda$wrap$0(UnmodifiableFuture.java:115)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.lang.IllegalStateException: Armeria server failed to start
+	at com.linecorp.armeria.spring.ArmeriaServerGracefulShutdownLifecycle.lambda$start$0(ArmeriaServerGracefulShutdownLifecycle.java:49)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	... 21 common frames omitted
+Caused by: io.netty.channel.unix.Errors$NativeIoException: bind(..) failed: Address already in use
+2024-08-15 08:43:10 - Starting ArmeriaApplication using Java 17.0.11 with PID 87716 (/Users/jamesstorr/Projects/Java/Spring/armeria/target/classes started by jamesstorr in /Users/jamesstorr/Projects/Java/Spring/armeria)
+2024-08-15 08:43:10 - No active profile set, falling back to 1 default profile: "default"
+2024-08-15 08:43:10 - Bean 'com.linecorp.armeria.spring.ArmeriaBeanPostProcessorConfiguration' of type [com.linecorp.armeria.spring.ArmeriaBeanPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [armeriaBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-15 08:43:10 - Tomcat initialized with port 8080 (http)
+2024-08-15 08:43:10 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:43:10 - Starting service [Tomcat]
+2024-08-15 08:43:10 - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-15 08:43:10 - Initializing Spring embedded WebApplicationContext
+2024-08-15 08:43:10 - Root WebApplicationContext: initialization completed in 578 ms
+2024-08-15 08:43:11 - verboseExceptions: rate-limit=10 (default)
+2024-08-15 08:43:11 - useEpoll: false (default)
+2024-08-15 08:43:11 - annotatedServiceExceptionVerbosity: unhandled (default)
+2024-08-15 08:43:11 - Using Tls engine: OpenSSL BoringSSL, 0x1010107f
+2024-08-15 08:43:11 - hostname: btm-qnf7qx3k7t (from 'hostname' command)
+2024-08-15 08:43:11 - Exposing 1 endpoint beneath base path '/actuator'
+2024-08-15 08:43:11 - Starting ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:43:11 - Tomcat started on port 8080 (http) with context path '/'
+2024-08-15 08:43:19 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:43:20 - The acceptor thread [http-nio-8080-Acceptor] did not stop cleanly
+2024-08-15 08:43:20 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'armeriaServerGracefulShutdownLifecycle'
+2024-08-15 08:43:20 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-15 08:43:20 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'armeriaServerGracefulShutdownLifecycle'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:469)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:257)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:990)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.jamesstorr.armeria.ArmeriaApplication.main(ArmeriaApplication.java:10)
+Caused by: java.util.concurrent.CompletionException: java.lang.IllegalStateException: Armeria server failed to start
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:936)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.doCompleteExceptionally(UnmodifiableFuture.java:179)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.lambda$wrap$0(UnmodifiableFuture.java:113)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2147)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.doComplete(UnmodifiableFuture.java:164)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.lambda$wrap$0(UnmodifiableFuture.java:115)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.lang.IllegalStateException: Armeria server failed to start
+	at com.linecorp.armeria.spring.ArmeriaServerGracefulShutdownLifecycle.lambda$start$0(ArmeriaServerGracefulShutdownLifecycle.java:49)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	... 21 common frames omitted
+Caused by: io.netty.channel.unix.Errors$NativeIoException: bind(..) failed: Address already in use
+2024-08-15 08:43:37 - Starting ArmeriaApplication using Java 17.0.11 with PID 88465 (/Users/jamesstorr/Projects/Java/Spring/armeria/target/classes started by jamesstorr in /Users/jamesstorr/Projects/Java/Spring/armeria)
+2024-08-15 08:43:37 - No active profile set, falling back to 1 default profile: "default"
+2024-08-15 08:43:37 - Bean 'com.linecorp.armeria.spring.ArmeriaBeanPostProcessorConfiguration' of type [com.linecorp.armeria.spring.ArmeriaBeanPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [armeriaBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-15 08:43:37 - Tomcat initialized with port 8080 (http)
+2024-08-15 08:43:37 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:43:37 - Starting service [Tomcat]
+2024-08-15 08:43:37 - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-15 08:43:37 - Initializing Spring embedded WebApplicationContext
+2024-08-15 08:43:37 - Root WebApplicationContext: initialization completed in 574 ms
+2024-08-15 08:43:37 - verboseExceptions: rate-limit=10 (default)
+2024-08-15 08:43:38 - useEpoll: false (default)
+2024-08-15 08:43:38 - annotatedServiceExceptionVerbosity: unhandled (default)
+2024-08-15 08:43:38 - Using Tls engine: OpenSSL BoringSSL, 0x1010107f
+2024-08-15 08:43:38 - hostname: btm-qnf7qx3k7t (from 'hostname' command)
+2024-08-15 08:43:38 - Exposing 1 endpoint beneath base path '/actuator'
+2024-08-15 08:43:38 - Starting ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:43:38 - Tomcat started on port 8080 (http) with context path '/'
+2024-08-15 08:43:56 - Starting ArmeriaApplicationTests using Java 17.0.11 with PID 89010 (started by jamesstorr in /Users/jamesstorr/Projects/Java/Spring/armeria)
+2024-08-15 08:43:56 - No active profile set, falling back to 1 default profile: "default"
+2024-08-15 08:43:56 - Bean 'com.linecorp.armeria.spring.ArmeriaBeanPostProcessorConfiguration' of type [com.linecorp.armeria.spring.ArmeriaBeanPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [armeriaBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-15 08:43:56 - verboseExceptions: rate-limit=10 (default)
+2024-08-15 08:43:57 - useEpoll: false (default)
+2024-08-15 08:43:57 - annotatedServiceExceptionVerbosity: unhandled (default)
+2024-08-15 08:43:57 - Using Tls engine: OpenSSL BoringSSL, 0x1010107f
+2024-08-15 08:43:57 - hostname: btm-qnf7qx3k7t (from 'hostname' command)
+2024-08-15 08:43:57 - Exposing 1 endpoint beneath base path '/actuator'
+2024-08-15 08:43:57 - Serving HTTP at /[0:0:0:0:0:0:0:0%0]:8080 - http://127.0.0.1:8080/
+2024-08-15 08:43:57 - Armeria server started at ports: {/[0:0:0:0:0:0:0:0%0]:8080=ServerPort(/[0:0:0:0:0:0:0:0%0]:8080, [http])}
+2024-08-15 08:43:57 - Started ArmeriaApplicationTests in 1.815 seconds (process running for 2.317)
+2024-08-15 08:44:15 - Starting ArmeriaApplication using Java 17.0.11 with PID 89557 (/Users/jamesstorr/Projects/Java/Spring/armeria/target/classes started by jamesstorr in /Users/jamesstorr/Projects/Java/Spring/armeria)
+2024-08-15 08:44:15 - No active profile set, falling back to 1 default profile: "default"
+2024-08-15 08:44:15 - Bean 'com.linecorp.armeria.spring.ArmeriaBeanPostProcessorConfiguration' of type [com.linecorp.armeria.spring.ArmeriaBeanPostProcessorConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [armeriaBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-15 08:44:16 - Tomcat initialized with port 8080 (http)
+2024-08-15 08:44:16 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:44:16 - Starting service [Tomcat]
+2024-08-15 08:44:16 - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-15 08:44:16 - Initializing Spring embedded WebApplicationContext
+2024-08-15 08:44:16 - Root WebApplicationContext: initialization completed in 560 ms
+2024-08-15 08:44:16 - verboseExceptions: rate-limit=10 (default)
+2024-08-15 08:44:16 - useEpoll: false (default)
+2024-08-15 08:44:16 - annotatedServiceExceptionVerbosity: unhandled (default)
+2024-08-15 08:44:16 - Using Tls engine: OpenSSL BoringSSL, 0x1010107f
+2024-08-15 08:44:17 - hostname: btm-qnf7qx3k7t (from 'hostname' command)
+2024-08-15 08:44:17 - Exposing 1 endpoint beneath base path '/actuator'
+2024-08-15 08:44:17 - Starting ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:44:17 - Tomcat started on port 8080 (http) with context path '/'
+2024-08-15 08:44:24 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-08-15 08:44:24 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'armeriaServerGracefulShutdownLifecycle'
+2024-08-15 08:44:24 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-15 08:44:24 - Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'armeriaServerGracefulShutdownLifecycle'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:469)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:257)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:990)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.jamesstorr.armeria.ArmeriaApplication.main(ArmeriaApplication.java:10)
+Caused by: java.util.concurrent.CompletionException: java.lang.IllegalStateException: Armeria server failed to start
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:936)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.doCompleteExceptionally(UnmodifiableFuture.java:179)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.lambda$wrap$0(UnmodifiableFuture.java:113)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2147)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.doComplete(UnmodifiableFuture.java:164)
+	at com.linecorp.armeria.common.util.UnmodifiableFuture.lambda$wrap$0(UnmodifiableFuture.java:115)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.lang.IllegalStateException: Armeria server failed to start
+	at com.linecorp.armeria.spring.ArmeriaServerGracefulShutdownLifecycle.lambda$start$0(ArmeriaServerGracefulShutdownLifecycle.java:49)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	... 21 common frames omitted
+Caused by: io.netty.channel.unix.Errors$NativeIoException: bind(..) failed: Address already in use

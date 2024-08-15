@@ -1,0 +1,13 @@
+# Prevent the embedded Tomcat from opening a TCP/IP port.
+server:
+  port: -1
+
+armeria:
+  ports:
+    - port: 8080
+      protocols:
+        - HTTP
+logging:
+  level:
+    root: ERROR  # Set the root logger to only log errors
+    com.jamesstorr.armeria.config.ArmeriaConfiguration: INFO  # Set your config class to log at INFO level
